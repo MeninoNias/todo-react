@@ -2,15 +2,19 @@ import React from 'react'
 
 function TodoListComponent(props) {
 
-    const itens = []
-
-    for (const [index, value] of props.todos.entries()) {
-        itens.push(<li key={index}>{value}</li>)
-    }
+    const itens = props.todos.map((value, index) =>
+        <li key={index}>{value}
+            <button
+                className="ml-2 border-2 px-2 border-black"
+                onClick={(e) => { props.handlerDelete(index) }}>
+                Deletar
+            </button>
+        </li>
+    );
 
     return (
         <>
-            <ul>
+            <ul className="mt-5">
                 {itens}
             </ul>
         </>

@@ -20,6 +20,12 @@ function App() {
     }
   }
 
+  const handlerDelete = (index) => {
+    todos.splice(index, 1)
+    console.log(todos)
+    setTodo([...todos])
+  }
+
   return (
     <>
       <div className="md:container md:mx-auto">
@@ -31,7 +37,8 @@ function App() {
         </InputComponent>
 
         <TodoListComponent
-          todos={todos}>
+          todos={todos}
+          handlerDelete = {handlerDelete}>
         </TodoListComponent>
       </div>
     </>
