@@ -28,8 +28,8 @@ function App() {
 
   return (
     <>
-      <div className="md:container md:mx-auto">
-        <h1>To do app</h1>
+      <div className="md:container mx-5">
+        <h1 className="text-center my-3 text-3xl ">TO DO - React</h1>
         <InputComponent
           inputValue={inputValue}
           handlerChange={handlerChange}
